@@ -1,0 +1,15 @@
+$record = [];
+        
+        foreach ($nums as $index => $num)
+        {
+            $remainder = $target - $num;
+
+            if(isset($record[$remainder]))
+            {
+                return [intval($record[$remainder]), intval($index)];
+            }
+
+            $record[intval($num)] = intval($index);
+        }
+
+        return [0,0];
