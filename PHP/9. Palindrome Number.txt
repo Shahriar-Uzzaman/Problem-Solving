@@ -1,0 +1,16 @@
+if ($x<0)
+{
+    return false;
+}
+
+$originalNumber = (string)$x;
+$reverseNumber = strrev($originalNumber);
+
+if($reverseNumber === $originalNumber)
+{
+    return true; 
+}
+else
+{
+    return false;
+}
