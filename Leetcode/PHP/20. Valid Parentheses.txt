@@ -1,0 +1,31 @@
+$store = [];
+        
+    $pairs = [
+        ')' => '(',
+        '}' => '{',
+        ']' => '['
+    ];
+        
+    for ($i = 0; $i < strlen($s); $i++) {
+        $char = $s[$i];
+         
+        if ($char === '(' || $char === '{' || $char === '[') 
+        {
+            $store[] = $char;
+        }
+        else 
+        {
+            if (empty($store))
+            {
+                return false;
+            }
+                
+            $top = array_pop($store);
+              
+            if ($top !== $pairs[$char])
+            {
+                return false;
+            }
+        }
+    }
+    return empty($store);
